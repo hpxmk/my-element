@@ -1,16 +1,11 @@
-.el-row {
+@import "./mixins/mixins.scss";
+@import "./mixins/utils.scss";
 
-    &::before,
-    &::after {
-        display: block;
-        content: ''
-    }
+@include b(row) {
+    @include utils-clearfix;
 
-    &::after {
-        clear: both;
-    }
 
-    &--flex {
+    @include m(flex) {
         display: flex;
 
         &::after,
@@ -18,36 +13,37 @@
             display: none;
         }
 
-        &.is-justify-end {
+        @include when(justify-end) {
             justify-content: flex-end;
         }
 
-        &.is-justify-start {
+        @include when(justify-start) {
             justify-content: flex-start;
         }
 
-        &.is-justify-center {
+        @include when(justify-center) {
             justify-content: center;
         }
 
-        &.is-justify-space-around {
+        @include when(justify-space-around) {
             justify-content: space-around;
         }
 
-        &.is-justify-space-between {
+        @include when(justify-space-between) {
             justify-content: space-between;
         }
 
-        &.is-align-middle {
+        @include when(align-middle) {
             align-items: center;
         }
 
-        &.is-align-top {
+        @include when(align-top) {
             align-items: flex-start;
         }
 
-        &.is-align-middle {
+        @include when(align-middle) {
             align-items: flex-end;
         }
     }
+
 }

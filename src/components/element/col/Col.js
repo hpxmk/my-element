@@ -6,7 +6,7 @@
  * @Description: file content
  */
 export default {
-  name:'ElCol',
+  name: 'ElCol',
   props: {
     span: {
       type: Number,
